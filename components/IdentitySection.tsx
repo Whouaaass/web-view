@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Eye, Glasses, Lightbulb, Network } from "lucide-react";
+import Logo from "../assets/logo-name-slogan.svg";
 
 export function IdentitySection() {
   return (
@@ -16,7 +17,7 @@ export function IdentitySection() {
           <Card className="mb-8 shadow-lg border-0">
             <CardContent className="p-8 text-center">
               <div className="flex justify-center mb-6 mt-6">
-                <img src="./assets/logo-name-slogan.svg" className="max-w-xs"></img>
+                <img src={Logo} className="max-w-xs"></img>
               </div>
               <div className="border-b-2 mx-24 my-12" />
               <div className="flex flex-wrap justify-center gap-2 mb-6">

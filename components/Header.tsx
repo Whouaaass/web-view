@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import logo from "../assets/logo.svg";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +32,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 rounded-lg flex items-center justify-center">
-              <ImageWithFallback src="./assets/logo.svg" alt="V.I.E.W. Logo" className="h-8" />
+              <ImageWithFallback src={logo} alt="V.I.E.W. Logo" className="h-8" />
             </div>
             <div>
               <div className="font-semibold text-lg text-primary">V.I.E.W.</div>
