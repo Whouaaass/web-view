@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import logo from "../assets/logo.svg";
 import { usePageContext } from "vike-react/usePageContext";
+import config from "vike-react";
+import Config from "#root/pages/+config";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +24,7 @@ export function Header() {
 
   const scrollToSection = (href: string) => {
     if (pageContext.pageId !== "/pages/index") {
-      window.location.href = "/" + href;
+      window.location.href = "/web-view/" + href;
     }
     const element = document.querySelector(href);
     if (element) {
