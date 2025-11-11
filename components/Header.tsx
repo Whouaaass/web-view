@@ -3,9 +3,11 @@ import { Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import logo from "../assets/logo.svg";
+import { usePageContext } from "vike-react/usePageContext";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pageContext = usePageContext();
 
   const navItems = [
     { name: "Inicio", href: "#inicio" },
@@ -13,11 +15,15 @@ export function Header() {
     { name: "Roles", href: "#roles" },
     { name: "Valores", href: "#valores" },
     { name: "Objetivos", href: "#objetivos" },
+    { name: "Proyectos", href: "#proyectos" },
     { name: "Miembros", href: "#miembros" },
     { name: "Contacto", href: "#contacto" },
   ];
 
   const scrollToSection = (href: string) => {
+    if (pageContext.pageId !== "/pages/index") {
+      window.location.href = "/" + href;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });

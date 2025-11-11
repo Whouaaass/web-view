@@ -11,6 +11,7 @@ import { ScheduleSection } from "../../components/ScheduleSection";
 import { Footer } from "../../components/Footer";
 
 import "../../styles/globals.css";
+import { ProjectsSection } from "#root/components/ProjectSection";
 
 export default function Page() {
   return (
@@ -22,6 +23,7 @@ export default function Page() {
       <ValuesSection />
       <ObjectivesSection />
       <RolesSection />
+      <ProjectsSection />
       <MembersSection />
       {/*<ScheduleSection />*/}
     </>

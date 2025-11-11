@@ -11,4 +11,10 @@ export default defineConfig({
     outDir: "dist", // default
     emptyOutDir: true, // clear dist/ before build, that's okay
   },
+  resolve: {
+    alias: {
+      "#root": __dirname,
+      "@": __dirname,
+    },
+  },
 });
