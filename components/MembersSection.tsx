@@ -13,7 +13,7 @@ export function MembersSection() {
     {
       name: "Fredy Esteban Anaya Salazar",
       image: "/web-view/miembros/fredy.jpg",
-      cvLink: "#",
+      cvLink: "https://drive.google.com/file/d/1Ooqtgb7mqg6P1OyamvDxtkhDsfnZHjOx/view",
     },
     {
       name: "Duber Andres Eraso Uni",
