@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "vike dev",
-    "build": "vike build",    
+    "build": "vike build",
     "preview": "vike preview",
     "deploy": "npm run build && gh-pages -d dist/client",
     "lint": "eslint ."
@@ -40,6 +40,7 @@
     "@radix-ui/react-toggle-group": "^1.1.11",
     "@radix-ui/react-tooltip": "^1.2.8",
     "@tailwindcss/vite": "^4.1.12",
+    "@types/node": "^25.0.1",
     "@types/react": "^19.1.11",
     "@types/react-dom": "^19.1.7",
     "class-variance-authority": "^0.7.1",

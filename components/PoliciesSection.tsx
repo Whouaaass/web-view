@@ -7,54 +7,54 @@ export function PoliciesSection() {
       title: "Confirmación de reuniones",
       description: "Toda reunión deberá ser confirmada con al menos 3 horas de anticipación a través de WhatsApp.",
       icon: Clock,
-      color: "text-blue-600",
-      bgColor: "bg-blue-50",
+      color: "text-blue-600 dark:text-blue-400",
+      bgColor: "bg-blue-50 dark:bg-blue-900/20",
     },
     {
       title: "Cumplimiento de responsabilidades",
       description: "Cada integrante deberá cumplir puntualmente las tareas adquiridas.",
       icon: CheckCircle,
-      color: "text-green-600",
-      bgColor: "bg-green-50",
+      color: "text-green-600 dark:text-green-400",
+      bgColor: "bg-green-50 dark:bg-green-900/20",
     },
     {
       title: "Comunicación efectiva",
       description: "Comunicación clara, respetuosa y oportuna.",
       icon: MessageCircle,
-      color: "text-purple-600",
-      bgColor: "bg-purple-50",
+      color: "text-purple-600 dark:text-purple-400",
+      bgColor: "bg-purple-50 dark:bg-purple-900/20",
     },
     {
       title: "Respeto y ética",
       description: "Actuar con integridad, respeto mutuo y responsabilidad.",
       icon: Heart,
-      color: "text-red-600",
-      bgColor: "bg-red-50",
+      color: "text-red-600 dark:text-red-400",
+      bgColor: "bg-red-50 dark:bg-red-900/20",
     },
     {
       title: "Adaptabilidad y mejora continua",
       description: "Evaluar procesos y optimizarlos.",
       icon: RefreshCw,
-      color: "text-orange-600",
-      bgColor: "bg-orange-50",
+      color: "text-orange-600 dark:text-orange-400",
+      bgColor: "bg-orange-50 dark:bg-orange-900/20",
     },
     {
       title: "Trabajo colaborativo",
       description: "Cooperación activa y reconocimiento de habilidades.",
       icon: Handshake,
-      color: "text-indigo-600",
-      bgColor: "bg-indigo-50",
+      color: "text-indigo-600 dark:text-indigo-400",
+      bgColor: "bg-indigo-50 dark:bg-indigo-900/20",
     },
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-gray-50">
+    <section id="politicas" className="py-16 lg:py-24 bg-gray-50 dark:bg-slate-950 transition-colors duration-500">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Políticas</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Políticas</h2>
             <div className="w-24 h-1 bg-primary mx-auto rounded"></div>
-            <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
               Los lineamientos que rigen nuestro comportamiento y trabajo en equipo.
             </p>
           </div>
@@ -65,7 +65,7 @@ export function PoliciesSection() {
               return (
                 <Card
                   key={index}
-                  className="shadow-lg border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white"
+                  className="shadow-lg border-0 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-slate-900"
                 >
                   <CardHeader className="pb-4">
                     <div className="flex items-center gap-3 mb-2">
@@ -73,10 +73,10 @@ export function PoliciesSection() {
                         <Icon className={`w-5 h-5 ${policy.color}`} />
                       </div>
                     </div>
-                    <CardTitle className="text-lg text-gray-900 leading-tight">{policy.title}</CardTitle>
+                    <CardTitle className="text-lg text-gray-900 dark:text-white leading-tight">{policy.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700 leading-relaxed">{policy.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{policy.description}</p>
                   </CardContent>
                 </Card>
               );

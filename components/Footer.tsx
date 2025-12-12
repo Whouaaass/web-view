@@ -14,19 +14,19 @@ export function Footer() {
   };
 
   return (
-    <footer id="contacto" className="bg-gray-900 text-white py-12">
+    <footer id="contacto" className="bg-slate-900 text-white py-16 border-t border-slate-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Contact Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
             {/* University Info */}
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-300">Información Institucional</h3>
-              <div className="space-y-2">
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 mt-1 text-gray-400 flex-shrink-0" />
-                  <div className="text-gray-300 text-sm">
-                    <p>Universidad del Cauca</p>
+              <h3 className="text-xl font-bold mb-6 text-white font-serif tracking-wide">Información Institucional</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3 group">
+                  <MapPin className="w-5 h-5 mt-1 text-blue-400 flex-shrink-0 group-hover:text-blue-300 transition-colors" />
+                  <div className="text-slate-300 text-sm leading-relaxed group-hover:text-slate-200 transition-colors">
+                    <p className="font-medium text-white">Universidad del Cauca</p>
                     <p>Facultad de Electrónica y Telecomunicaciones</p>
                     <p>Ingeniería de Sistemas</p>
                     <p>Popayán, 2025</p>
@@ -37,15 +37,15 @@ export function Footer() {
 
             {/* Contact */}
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-300">Contacto</h3>
-              <div className="space-y-3">
+              <h3 className="text-xl font-bold mb-6 text-white font-serif tracking-wide">Contacto</h3>
+              <div className="space-y-4">
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={handleEmailClick}
-                  className="text-gray-300 hover:text-white hover:bg-gray-800 p-0 h-auto justify-start"
+                  className="text-slate-300 hover:text-white hover:bg-slate-800 p-2 -ml-2 h-auto justify-start w-full transition-all duration-300"
                 >
-                  <Mail className="w-4 h-4 mr-2" />
+                  <Mail className="w-5 h-5 mr-3 text-blue-400" />
                   view.group@unicauca.edu.co
                 </Button>
                 <Button
@@ -95,10 +95,10 @@ export function Footer() {
                   Nosotros
                 </button>
                 <button
-                  onClick={() => document.querySelector("#miembros")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() => document.querySelector("#equipo")?.scrollIntoView({ behavior: "smooth" })}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Miembros
+                  Equipo
                 </button>
                 <button
                   onClick={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}

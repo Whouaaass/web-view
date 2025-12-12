@@ -1,53 +1,52 @@
-@custom-variant dark (&:is(.dark *));
-@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap");
 
 :root {
-  --font-size: 14px;
+  --font-size: 16px;
   --background: #ffffff;
-  --foreground: #000000;
+  --foreground: #1a1a1a;
   --card: #ffffff;
-  --card-foreground: #000000;
+  --card-foreground: #1a1a1a;
   --popover: #ffffff;
-  --popover-foreground: #000000;
-  --primary: #000000;
+  --popover-foreground: #1a1a1a;
+  --primary: #2563eb;
   --primary-foreground: #ffffff;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #000000;
-  --muted: #f8f8f8;
-  --muted-foreground: #666666;
-  --accent: #e5e5e5;
-  --accent-foreground: #000000;
-  --destructive: #dc2626;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #1f2937;
+  --muted: #f9fafb;
+  --muted-foreground: #6b7280;
+  --accent: #eff6ff;
+  --accent-foreground: #1e40af;
+  --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: rgba(0, 0, 0, 0.15);
-  --input: transparent;
-  --input-background: #f8f8f8;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --input-background: #ffffff;
   --switch-background: #e5e5e5;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #000000;
-  --chart-1: #000000;
-  --chart-2: #333333;
-  --chart-3: #666666;
-  --chart-4: #999999;
-  --chart-5: #cccccc;
-  --radius: 0.75rem;
-  --sidebar: #fafafa;
-  --sidebar-foreground: #000000;
-  --sidebar-primary: #000000;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f5f5f5;
-  --sidebar-accent-foreground: #000000;
-  --sidebar-border: rgba(0, 0, 0, 0.15);
-  --sidebar-ring: #000000;
+  --ring: #3b82f6;
+  --chart-1: #2563eb;
+  --chart-2: #3b82f6;
+  --chart-3: #60a5fa;
+  --chart-4: #93c5fd;
+  --chart-5: #bfdbfe;
+  --radius: 0.5rem;
+  --sidebar: #f9fafb;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #18181b;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #3b82f6;
 }
 
 .dark {
-  --background: #000000;
-  --foreground: #ffffff;
-  --card: #111111;
-  --card-foreground: #ffffff;
-  --popover: #111111;
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #171717;
+  --card-foreground: #fafafa;
+  --popover: #171717;
   --popover-foreground: #ffffff;
   --primary: #ffffff;
   --primary-foreground: #000000;
@@ -78,6 +77,8 @@
   --sidebar-border: #333333;
   --sidebar-ring: #ffffff;
 }
+
+@import "./typography.css";
 
 @theme inline {
   --color-background: var(--background);
@@ -126,7 +127,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
     /*
     font-family: 'Tw Cen MT', 'Century Gothic', 'Futura', 'Arial Narrow', 
                  -apple-system, BlinkMacSystemFont, sans-serif;
@@ -198,4 +199,494 @@
 
 html {
   font-size: var(--font-size);
+}
+
+/* ============================================
+   DYNAMIC THEME OVERRIDES - Light/Dark Mode
+   ============================================ */
+
+/* Light mode (default) - Base variables */
+:root {
+  --dynamic-bg-white: #ffffff;
+  --dynamic-bg-gray-50: #f9fafb;
+  --dynamic-bg-slate-900: #0f172a;
+  --dynamic-bg-slate-950: #020617;
+  --dynamic-text-white: #ffffff;
+  --dynamic-text-gray-900: #111827;
+  --dynamic-text-gray-700: #374151;
+  --dynamic-text-gray-600: #4b5563;
+  --dynamic-text-gray-300: #d1d5db;
+  --dynamic-text-gray-400: #9ca3af;
+  --dynamic-text-gray-500: #6b7280;
+  --dynamic-bg-blue-50: #eff6ff;
+  --dynamic-bg-indigo-50: #eef2ff;
+  --dynamic-bg-slate-800: #1e293b;
+}
+
+/* Dark mode overrides */
+.dark {
+  --dynamic-bg-white: #0a0a0a;
+  --dynamic-bg-gray-50: #1a1a1a;
+  --dynamic-bg-slate-900: #0f172a;
+  --dynamic-bg-slate-950: #020617;
+  --dynamic-text-white: #fafafa;
+  --dynamic-text-gray-900: #fafafa;
+  --dynamic-text-gray-700: #f3f4f6;
+  --dynamic-text-gray-600: #e5e7eb;
+  --dynamic-text-gray-300: #d1d5db;
+  --dynamic-text-gray-400: #9ca3af;
+  --dynamic-text-gray-500: #6b7280;
+  --dynamic-bg-blue-50: #001f3f;
+  --dynamic-bg-indigo-50: #001c3f;
+  --dynamic-bg-slate-800: #0f172a;
+}
+
+/* ============================================
+   OVERRIDE SPECIFIC COLOR CLASSES
+   ============================================ */
+
+/* Override bg-white */
+.bg-white {
+  background-color: var(--background) !important;
+}
+
+/* Override text colors */
+.text-white,
+.text-gray-900,
+.text-gray-700,
+.text-gray-600,
+.text-gray-300,
+.text-gray-400,
+.text-gray-500,
+.text-blue-700,
+.text-blue-600,
+.text-indigo-700,
+.text-indigo-600,
+.text-purple-700,
+.text-purple-600 {
+  color: var(--foreground) !important;
+}
+
+/* Override bg-gray-50 */
+.bg-gray-50 {
+  background-color: var(--background) !important;
+}
+
+/* Override bg-slate-900, bg-slate-950 */
+.bg-slate-900,
+.bg-slate-950,
+.bg-slate-800 {
+  background-color: var(--background) !important;
+}
+
+/* Override gradient backgrounds - light mode becomes light, dark mode stays dark */
+.dark .from-white {
+  --tw-gradient-from: var(--background) !important;
+}
+
+.dark .via-white {
+  --tw-gradient-via: var(--background) !important;
+}
+
+.dark .to-white {
+  --tw-gradient-to: var(--background) !important;
+}
+
+/* Override blue gradients for dark mode */
+.dark .from-blue-50 {
+  --tw-gradient-from: var(--background) !important;
+}
+
+.dark .to-blue-50 {
+  --tw-gradient-to: var(--background) !important;
+}
+
+.dark .to-indigo-50 {
+  --tw-gradient-to: var(--background) !important;
+}
+
+/* Override border colors */
+.border-gray-100,
+.border-slate-800,
+.border-gray-300 {
+  border-color: var(--border) !important;
+}
+
+.dark .border-gray-100,
+.dark .border-slate-800 {
+  border-color: var(--border) !important;
+}
+
+/* Override ring colors */
+.ring-gray-100,
+.ring-slate-800 {
+  border-color: var(--border) !important;
+}
+
+/* Section backgrounds */
+section.bg-white:not(.dark\:bg-gradient-to-r) {
+  background-color: var(--background) !important;
+}
+
+section.bg-gray-50 {
+  background-color: var(--background) !important;
+}
+
+/* Card backgrounds */
+[data-slot="card"].bg-white,
+[data-slot="card"].dark\:bg-slate-900 {
+  background-color: var(--card) !important;
+}
+
+.dark [data-slot="card"].dark\:bg-slate-900 {
+  background-color: var(--card) !important;
+}
+
+/* Hero Section overrides */
+.dark .from-blue-50 {
+  --tw-gradient-from: var(--background);
+}
+
+.dark .via-white {
+  --tw-gradient-via: var(--background);
+}
+
+.dark .to-indigo-50 {
+  --tw-gradient-to: var(--background);
+}
+
+/* Ensure all dark: prefixed color classes work */
+.dark .text-gray-700,
+.dark .text-gray-600,
+.dark .text-gray-900 {
+  color: var(--foreground) !important;
+}
+
+.dark .bg-white,
+.dark .bg-gray-50,
+.dark .bg-slate-900,
+.dark .bg-slate-950 {
+  background-color: var(--background) !important;
+}
+
+/* Color scheme indicator */
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* ============================================
+   GRADIENT OVERRIDES
+   ============================================ */
+
+/* Override gradient colors for light mode base */
+:root {
+  --dynamic-gradient-from: #ffffff;
+  --dynamic-gradient-via: #ffffff;
+  --dynamic-gradient-to: #ffffff;
+  --dynamic-blue-100: #dbeafe;
+  --dynamic-indigo-100: #e0e7ff;
+  --dynamic-blue-50: #eff6ff;
+}
+
+.dark {
+  --dynamic-gradient-from: var(--background);
+  --dynamic-gradient-via: var(--background);
+  --dynamic-gradient-to: var(--background);
+  --dynamic-blue-100: #001f3f;
+  --dynamic-indigo-100: #001c3f;
+  --dynamic-blue-50: #001a33;
+}
+
+/* Override all from-* gradient starts */
+.from-blue-50,
+.from-gray-50,
+.from-white {
+  --tw-gradient-from: var(--background) !important;
+  --tw-gradient-from-position: 0% !important;
+}
+
+/* Override all via-* gradient middles */
+.via-white,
+.via-gray-50 {
+  --tw-gradient-via: var(--background) !important;
+  --tw-gradient-via-position: 50% !important;
+}
+
+/* Override all to-* gradient ends */
+.to-indigo-50,
+.to-gray-50,
+.to-blue-50,
+.to-transparent,
+.to-blue-50\/50,
+.to-indigo-50\/50,
+.to-blue-950\/30,
+.to-indigo-950\/30 {
+  --tw-gradient-to: var(--background) !important;
+  --tw-gradient-to-position: 100% !important;
+}
+
+/* Override blur circle backgrounds */
+.bg-blue-100,
+.bg-indigo-100,
+.bg-blue-900 {
+  background-color: var(--background) !important;
+}
+
+.dark .bg-blue-100,
+.dark .bg-indigo-100,
+.dark .bg-blue-900 {
+  background-color: var(--background) !important;
+}
+
+/* Override opacity backgrounds */
+.bg-blue-100\/20,
+.bg-indigo-100\/30,
+.bg-blue-50\/40,
+.bg-blue-900\/20,
+.bg-indigo-900\/20,
+.bg-blue-900\/10,
+.bg-white\/80,
+.bg-white\/40,
+.bg-white\/10,
+.bg-slate-900\/80,
+.bg-slate-900\/10 {
+  background-color: var(--background) !important;
+  opacity: 0.8 !important;
+}
+
+.dark .bg-blue-100\/20,
+.dark .bg-indigo-100\/30,
+.dark .bg-blue-50\/40,
+.dark .bg-blue-900\/20,
+.dark .bg-indigo-900\/20,
+.dark .bg-blue-900\/10,
+.dark .bg-white\/80,
+.dark .bg-white\/40,
+.dark .bg-white\/10,
+.dark .bg-slate-900\/80,
+.dark .bg-slate-900\/10 {
+  background-color: var(--background) !important;
+  opacity: 0.8 !important;
+}
+
+/* Override ring colors with opacity */
+.ring-white\/80,
+.ring-white\/60,
+.ring-gray-100,
+.ring-slate-800 {
+  border-color: var(--border) !important;
+}
+
+.dark .ring-white\/80,
+.dark .ring-white\/60,
+.dark .ring-gray-100,
+.dark .ring-slate-800 {
+  border-color: var(--border) !important;
+}
+
+/* Override badge backgrounds */
+.bg-blue-50,
+.bg-indigo-50,
+.bg-purple-50,
+.bg-green-50,
+.bg-red-50,
+.bg-orange-50,
+.bg-yellow-50,
+.bg-amber-50 {
+  background-color: var(--secondary) !important;
+}
+
+.dark .bg-blue-50,
+.dark .bg-indigo-50,
+.dark .bg-purple-50,
+.dark .bg-green-50,
+.dark .bg-red-50,
+.dark .bg-orange-50,
+.dark .bg-yellow-50,
+.dark .bg-amber-50 {
+  background-color: var(--secondary) !important;
+}
+
+/* Override badge text colors */
+.text-blue-300,
+.text-indigo-300,
+.text-purple-300,
+.text-green-300,
+.text-red-300,
+.text-orange-300,
+.text-pink-300 {
+  color: var(--foreground) !important;
+}
+
+.dark .text-blue-300,
+.dark .text-indigo-300,
+.dark .text-purple-300,
+.dark .text-green-300,
+.dark .text-red-300,
+.dark .text-orange-300,
+.dark .text-pink-300 {
+  color: var(--foreground) !important;
+}
+
+/* Badge default styling */
+[data-slot="badge"] {
+  background-color: var(--secondary) !important;
+  color: var(--foreground) !important;
+  border-color: var(--border) !important;
+  transition: all 0.2s ease-in-out;
+}
+
+[data-slot="badge"]:hover {
+  background-color: var(--accent) !important;
+  color: var(--foreground) !important;
+}
+
+.dark [data-slot="badge"] {
+  background-color: var(--secondary) !important;
+  color: var(--foreground) !important;
+  border-color: var(--border) !important;
+}
+
+.dark [data-slot="badge"]:hover {
+  background-color: var(--accent) !important;
+  color: var(--foreground) !important;
+}
+
+/* Ensure badge text is always visible */
+[data-slot="badge"] svg {
+  color: var(--foreground) !important;
+}
+
+/* ============================================
+   HEADER - ALWAYS BLACK
+   ============================================ */
+
+header,
+header[class*="bg-"] {
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+
+header * {
+  color: #ffffff !important;
+}
+
+header a {
+  color: #ffffff !important;
+}
+
+header .text-foreground,
+header .text-muted-foreground {
+  color: #ffffff !important;
+}
+
+header .hover\:text-primary:hover {
+  color: #3b82f6 !important;
+}
+
+header .hover\:bg-accent:hover {
+  background-color: #1e293b !important;
+}
+
+header button {
+  color: #ffffff !important;
+}
+
+/* ============================================
+   FOOTER - ALWAYS BLACK
+   ============================================ */
+
+footer,
+footer[class*="bg-"],
+#contacto {
+  background-color: #0a0a0a !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-color: #1e293b !important;
+}
+
+footer *,
+#contacto * {
+  color: #ffffff !important;
+}
+
+footer .text-white,
+#contacto .text-white {
+  color: #ffffff !important;
+}
+
+footer .text-gray-300,
+footer .text-gray-400,
+footer .text-slate-300,
+footer .text-gray-200,
+#contacto .text-gray-300,
+#contacto .text-gray-400,
+#contacto .text-slate-300,
+#contacto .text-gray-200 {
+  color: #cbd5e1 !important;
+}
+
+footer .hover\:text-white:hover,
+footer .hover\:text-slate-200:hover,
+#contacto .hover\:text-white:hover,
+#contacto .hover\:text-slate-200:hover {
+  color: #ffffff !important;
+}
+
+footer .hover\:bg-slate-800:hover,
+footer .hover\:bg-gray-800:hover,
+#contacto .hover\:bg-slate-800:hover,
+#contacto .hover\:bg-gray-800:hover {
+  background-color: #1e293b !important;
+}
+
+footer .text-blue-400,
+footer .text-primary,
+#contacto .text-blue-400,
+#contacto .text-primary {
+  color: #60a5fa !important;
+}
+
+footer .group-hover\:text-blue-300:hover,
+#contacto .group-hover\:text-blue-300:hover {
+  color: #93c5fd !important;
+}
+
+footer .border-gray-700,
+footer .border-slate-800,
+#contacto .border-gray-700,
+#contacto .border-slate-800 {
+  border-color: #1e293b !important;
+}
+
+footer a,
+#contacto a {
+  color: #ffffff !important;
+}
+
+footer button,
+#contacto button {
+  color: #ffffff !important;
+}
+
+/* ============================================
+   LOGO CONTAINER - VISIBILITY IN DARK MODE
+   ============================================ */
+
+.dark .rounded-3xl[class*="ring-white"] {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.dark .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark .ring-white\/60 {
+  border-color: rgba(255, 255, 255, 0.5) !important;
 }

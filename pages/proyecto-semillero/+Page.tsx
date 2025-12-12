@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Clock, Code, Database, Layout, Users, Calendar, GitBranch, Server } from "lucide-react";
+import { CheckCircle, Clock, Code, Database, Layout, Users, Calendar, GitBranch, Server, Bell, BarChart3, Archive } from "lucide-react";
 
 export default function ProyectoSemilleroPage() {
   const [selectedPhase, setSelectedPhase] = useState("actual");
@@ -10,8 +10,8 @@ export default function ProyectoSemilleroPage() {
   const projectInfo = {
     title: "Sistema de Gestión del Semillero de Ciencia de Datos",
     institution: "Universidad del Cauca",
-    status: "En Desarrollo",
-    startDate: "2024",
+    status: "Completado",
+    startDate: "2025",
     technologies: ["Laravel", "React", "MySQL"],
   };
 
@@ -40,41 +40,47 @@ export default function ProyectoSemilleroPage() {
       icon: Calendar,
       progress: 100,
     },
-  ];
-
-  const inProgressFeatures = [
     {
       name: "Gestión de Proyectos",
       description: "Sistema para administrar proyectos de investigación del semillero",
       icon: GitBranch,
-      progress: 40,
+      progress: 100,
     },
     {
       name: "Foro de Discusión",
       description: "Espacio colaborativo para intercambio de ideas entre miembros",
       icon: Users,
-      progress: 20,
+      progress: 100,
     },
-  ];
-
-  const plannedFeatures = [
     {
       name: "Sistema de Notificaciones",
       description: "Alertas en tiempo real para eventos y actualizaciones importantes",
+      icon: Bell,
+      progress: 100,
     },
     {
       name: "Repositorio de Recursos",
       description: "Biblioteca digital con materiales de estudio y recursos compartidos",
+      icon: Archive,
+      progress: 100,
     },
     {
       name: "Dashboard Analítico",
       description: "Visualización de métricas y estadísticas del semillero",
+      icon: BarChart3,
+      progress: 100,
     },
     {
       name: "Sistema de Asistencia",
       description: "Control de asistencia a reuniones y eventos",
+      icon: Calendar,
+      progress: 100,
     },
   ];
+
+  const inProgressFeatures: typeof completedFeatures = [];
+
+  const plannedFeatures: typeof completedFeatures = [];
 
   const techStack = [
     {
@@ -111,14 +117,14 @@ export default function ProyectoSemilleroPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Header del Proyecto */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+      <section className="bg-white text-gray-900 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="bg-green-500 text-white mb-4">
               <Clock className="w-3 h-3 mr-1" />
               {projectInfo.status}
             </Badge>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4">{projectInfo.title}</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-white">{projectInfo.title}</h1>
             <p className="text-xl text-blue-100 mb-6">Semillero de Ciencia de Datos - {projectInfo.institution}</p>
             <div className="flex flex-wrap justify-center gap-3">
               {projectInfo.technologies.map((tech, index) => (
@@ -348,28 +354,30 @@ export default function ProyectoSemilleroPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <Card className="text-center border-2 hover:border-blue-400 transition-all">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-green-600 mb-2">4</div>
+                  <div className="text-4xl font-bold text-green-600 mb-2">{completedFeatures.length}</div>
                   <div className="text-gray-600 text-sm">Completadas</div>
                 </CardContent>
               </Card>
 
               <Card className="text-center border-2 hover:border-blue-400 transition-all">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">2</div>
+                  <div className="text-4xl font-bold text-blue-600 mb-2">{inProgressFeatures.length}</div>
                   <div className="text-gray-600 text-sm">En Desarrollo</div>
                 </CardContent>
               </Card>
 
               <Card className="text-center border-2 hover:border-blue-400 transition-all">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-gray-600 mb-2">4</div>
+                  <div className="text-4xl font-bold text-gray-600 mb-2">{plannedFeatures.length}</div>
                   <div className="text-gray-600 text-sm">Planificadas</div>
                 </CardContent>
               </Card>
 
               <Card className="text-center border-2 hover:border-blue-400 transition-all">
                 <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-purple-600 mb-2">60%</div>
+                  <div className="text-4xl font-bold text-purple-600 mb-2">
+                    {Math.round((completedFeatures.length / (completedFeatures.length + inProgressFeatures.length + plannedFeatures.length)) * 100)}%
+                  </div>
                   <div className="text-gray-600 text-sm">Completado</div>
                 </CardContent>
               </Card>
@@ -379,10 +387,10 @@ export default function ProyectoSemilleroPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-16 bg-white text-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">Proyecto en Constante Evolución</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">Proyecto en Constante Evolución</h2>
             <p className="text-xl text-blue-100 mb-8">
               Este sistema está siendo desarrollado por el grupo V.I.E.W. en colaboración con el Semillero de Ciencia de
               Datos de la Universidad del Cauca.
@@ -392,7 +400,7 @@ export default function ProyectoSemilleroPage() {
                 Inicio: {projectInfo.startDate}
               </Badge>
               <Badge variant="secondary" className="text-base px-4 py-2 bg-green-500 text-white">
-                Estado: Desarrollo Activo
+                Estado: Terminado
               </Badge>
             </div>
           </div>
