@@ -7,27 +7,23 @@ export function MembersSection() {
   const members = [
     {
       name: "Miguel Ángel Calambas Vivas",
-      image:
-        "https://images.unsplash.com/photo-1600178572204-6ac8886aae63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBzdHVkZW50JTIwcG9ydHJhaXR8ZW58MXx8fHwxNzU2MDk2MDQzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      cvLink: "#cv-miguel",
+      image: "/web-view/miembros/miguel.jpg",
+      cvLink: "https://drive.google.com/file/d/1NuYAnijju1uBjuEstWrKkoOiaIFuZ-oa/view",
     },
     {
       name: "Fredy Esteban Anaya Salazar",
-      image:
-        "https://images.unsplash.com/photo-1571164890820-6c08087e3401?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwc3R1ZGVudCUyMGVuZ2luZWVyaW5nfGVufDF8fHx8MTc1NjA5NjA0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      cvLink: "#cv-fredy",
+      image: "/web-view/miembros/fredy.jpg",
+      cvLink: "#",
     },
     {
       name: "Duber Andres Eraso Uni",
-      image:
-        "https://images.unsplash.com/photo-1663535067514-66386c117b6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMHNjaWVuY2UlMjBzdHVkZW50fGVufDF8fHx8MTc1NjA5NjA0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      cvLink: "#cv-duber",
+      image: "/web-view/miembros/duber.JPEG",
+      cvLink: "https://drive.google.com/file/d/1V8EddQzmw9oZgZ57mYb6FXZH39S9HFVe/view",
     },
     {
       name: "Julián David Meneses Daza",
-      image:
-        "https://images.unsplash.com/photo-1627776880991-808c5996527b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbmdpbmVlcmluZyUyMHN0dWRlbnQlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NTYwOTYwNDR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      cvLink: "#cv-julian",
+      image: "/web-view/miembros/julian.jpg",
+      cvLink: "https://drive.google.com/file/d/1YCYFvYCHRxy4SJ8mGB7uQrNDBOh8Yf5V/view",
     },
   ];
 

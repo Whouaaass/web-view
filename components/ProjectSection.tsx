@@ -18,10 +18,15 @@ export function ProjectsSection() {
       inProgressFeatures: 0,
       link: "./proyecto-semillero",
       highlights: [
-        "Sistema de Login y Autenticación",
+        "Sistema de Login",
+        "Gestión de Perfiles",
         "Gestión de Usuarios y Roles",
         "Publicación de Eventos",
-        "Gestión de Perfiles",
+        "Gestión de Proyectos",
+        "Foro de Discusión",
+        "Sistema de Notificaciones",
+        "Dashboard Analítico",
+        "Sistema de Asistencia",
       ],
     },
   ];

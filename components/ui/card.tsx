@@ -3,24 +3,38 @@ import * as React from "react";
 import { cn } from "./utils";
 
 function Card({ className, children, ...props }: React.ComponentProps<"div">) {
+  const bubbles = [
+    { position: "-right-8 -top-10", size: "size-20", gradient: "from-slate-600/35 via-slate-700/28 to-slate-800/22", animation: "group-hover/card:animate-[bubble-wander-1_1.5s_ease-in-out]" },
+    { position: "-left-12 -bottom-12", size: "size-22", gradient: "from-slate-700/32 via-slate-600/26 to-slate-800/20", animation: "group-hover/card:animate-[bubble-wander-2_1.75s_ease-in-out]" },
+    { position: "-right-6 bottom-8", size: "size-18", gradient: "from-gray-600/30 via-gray-700/24 to-slate-800/18", animation: "group-hover/card:animate-[bubble-wander-3_1.6s_ease-in-out]", hidden: "max-[700px]:hidden" },
+    { position: "-left-8 top-6", size: "size-16", gradient: "from-slate-700/28 via-gray-700/22 to-slate-800/16", animation: "group-hover/card:animate-[bubble-wander-4_1.8s_ease-in-out]", hidden: "max-[1050px]:hidden" },
+    { position: "-right-4 -bottom-6", size: "size-20", gradient: "from-gray-700/32 via-slate-600/26 to-slate-800/20", animation: "group-hover/card:animate-[bubble-wander-5_1.55s_ease-in-out]", hidden: "max-[1050px]:hidden" },
+  ];
+
   return (
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground relative isolate flex flex-col gap-6 overflow-hidden rounded-xl border group/card",
+        "@container bg-card text-card-foreground relative isolate flex flex-col gap-6 overflow-hidden rounded-xl border group/card group",
         className,
       )}
       {...props}
     >
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -right-16 -top-16 size-36 rounded-full bg-gradient-to-br from-blue-500/20 via-indigo-400/16 to-cyan-400/18 blur-3xl opacity-60 transition-transform duration-700 ease-out group-hover/card:translate-x-4 group-hover/card:translate-y-3 group-hover/card:scale-105"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute -left-20 -bottom-20 size-32 rounded-full bg-gradient-to-tr from-amber-400/20 via-rose-400/16 to-fuchsia-500/18 blur-3xl opacity-55 transition-transform duration-700 ease-out group-hover/card:-translate-x-3 group-hover/card:-translate-y-2 group-hover/card:scale-105"
-      />
-      {children}
+      {bubbles.map((bubble, idx) => (
+        <span
+          key={idx}
+          aria-hidden="true"
+          className={cn(
+            "pointer-events-none absolute rounded-full bg-gradient-to-br blur-lg opacity-95 mix-blend-screen transition-transform duration-250 ease-out will-change-transform",
+            bubble.position,
+            bubble.size,
+            bubble.gradient,
+            bubble.animation,
+            bubble.hidden,
+          )}
+        />
+      ))}
+      <div className="relative z-10">{children}</div>
     </div>
   );
 }
